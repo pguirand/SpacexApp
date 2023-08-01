@@ -330,20 +330,20 @@ fun DaysDifferenceFromDate(dateString: String): Long {
 
 }
 
-@RequiresApi(Build.VERSION_CODES.O)
-@Preview
-@Composable
-fun PreviewHumanReadableDate() {
-    HumanReadableDate("2006-03-25T10:30:00+12:00")
-}
+//@RequiresApi(Build.VERSION_CODES.O)
+//@Preview
+//@Composable
+//fun PreviewHumanReadableDate() {
+//    HumanReadableDate("2006-03-25T10:30:00+12:00")
+//}
+//
 
-
-@RequiresApi(Build.VERSION_CODES.O)
-@Preview
-@Composable
-fun PreviewDaysDifference() {
-    DaysDifferenceFromDate("2026-03-25T10:30:00+12:00")
-}
+//@RequiresApi(Build.VERSION_CODES.O)
+//@Preview
+//@Composable
+//fun PreviewDaysDifference() {
+//    DaysDifferenceFromDate("2026-03-25T10:30:00+12:00")
+//}
 
 @Composable
 fun CompanyInfo(company: CompanyInfoModel) {

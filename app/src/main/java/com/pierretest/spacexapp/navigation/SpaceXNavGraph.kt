@@ -7,6 +7,7 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -53,6 +54,7 @@ fun SpaceXNavGraph(
     }, drawerState = drawerState) {
         Scaffold(
             topBar = {
+                if (currentRoute != "DetailLaunchScreen/{launchId}") {
                 TopAppBar(title = {
                     val titleText = if (currentRoute == "DetailLaunchScreen/{launchId}") {
                         "Details"
@@ -71,8 +73,27 @@ fun SpaceXNavGraph(
                             )
                         })
                     },
-                    colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
-                )
+                    colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer))
+                } else {
+                    TopAppBar(
+                        title = {
+
+                            Text(text = "Details")
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        navigationIcon = {
+                            IconButton(onClick = {
+                                navController.navigateUp()
+                            }, content = {
+                                Icon(
+                                    imageVector = Icons.Filled.ArrowBack, contentDescription = "Back"
+                                )
+                            })
+                        },
+                        colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+                    )
+                }
+
             }, modifier = Modifier
         ) {
             NavHost(

@@ -151,5 +151,6 @@ fun DetailLaunchScreen(launchingEvent: SingleLaunchModel) {
         }
 
         }
+
     }
 
